@@ -106,7 +106,7 @@ onboarding → preparing → ready → learning → done
    → 没懂 → 回到步骤 1
    ↓
 4. 小测验 ⏸
-   1-2 道题。答对→标记掌握度，答错→解释正确答案
+   1-2 道题。答对→标记掌握度，答错→解释正确答案 → **立即追加 notes.md**（记录错误题目 + 你的答案 + 正确答案）
    → 跳过 → 不评分
    ↓
 5. 评分 → easy/medium/hard
@@ -134,6 +134,7 @@ onboarding → preparing → ready → learning → done
 | 何时 | 文件 | 内容 |
 |------|------|------|
 | 每次互动后立即 | transcript.jsonl | `{"time":"ISO秒级","node":"id","type":"qa/feynman/quiz/reteach/session","...字段"}` |
+| 答错测验题后立即 | notes.md | 追加"错题：题目+你的答案+正确答案" |
 | 每节结束后 | notes.md | 自动总结 3-5 条要点 |
 | 每节结束后 | progress.md | 更新当前节点状态、评分 |
 | 有更好的讲法时 | 课程文件 | 写回补充/类比 |
