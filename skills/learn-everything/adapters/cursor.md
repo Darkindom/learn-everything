@@ -14,14 +14,14 @@ Cursor 可直接读写文件系统。学习目录结构：
 {learning_dir}/{主题名}/
 ├── progress.md          ← JSON 状态（图谱、评分）
 ├── notes.md             ← 自动总结 + 手动笔记
-├── transcript.md        ← 互动记录
+├── transcript.jsonl        ← 互动记录
 ├── 01-{标题}.md         ← 第 1 节课（教材）
 ├── 02-{标题}.md         ← 第 2 节课
 └── ...
 ```
 
 - 写文件前先读当前内容，再完整写入
-- transcript.md 每次互动后立即追加
+- transcript.jsonl 每次互动后立即追加
 - 写完验证文件是否存在，不反复覆盖
 
 ## 内容获取

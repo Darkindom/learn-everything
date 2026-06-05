@@ -54,12 +54,15 @@
 
 **每条互动后立即落盘，不延迟、不批量：**
 
-| 互动类型 | 存什么 | 存到哪 |
-|---------|--------|-------|
-| 回答学生提问 | 时间戳 + Q&A | transcript.md |
-| 费曼检查完成 | 问题 + 学生回答 + 判断 | transcript.md |
-| 测验批改 | 题目 + 答案 + 对错 | transcript.md |
-| 重讲 | 换角度重讲标记 | transcript.md |
+| 互动类型 | 格式 | 存到 |
+|---------|------|-------|
+| 回答学生提问 | `{"time":"...","type":"qa","q":"...","a":"..."}` | transcript.jsonl |
+| 费曼检查完成 | `{"time":"...","type":"feynman","question":"...","answer":"...","judgment":"..."}` | transcript.jsonl |
+| 测验批改 | `{"time":"...","type":"quiz","question":"...","answer":"...","correct":true/false}` | transcript.jsonl |
+| 重讲 | `{"time":"...","type":"reteach","angle":"...","reason":"..."}` | transcript.jsonl |
+| Session 开始/切换 | `{"time":"...","type":"session","teacher":"...","action":"start/switch"}` | transcript.jsonl |
+
+追加方式：先 `Read` transcript.jsonl，在末尾 append 一行 JSON，再 `Write` 回去。
 
 **每节结束后：**
 

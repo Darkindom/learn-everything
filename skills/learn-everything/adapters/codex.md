@@ -14,14 +14,14 @@ Codex 可直接操作文件系统。学习目录结构：
 {learning_dir}/{主题名}/
 ├── progress.md          ← JSON 状态（图谱、评分）
 ├── notes.md             ← 自动总结 + 手动笔记
-├── transcript.md        ← 互动记录
+├── transcript.jsonl        ← 互动记录
 ├── 01-{标题}.md         ← 第 1 节课（教材）
 ├── 02-{标题}.md         ← 第 2 节课
 └── ...
 ```
 
 - 追加内容时先读文件当前内容，拼接后再写入
-- transcript.md 每次互动后立即追加
+- transcript.jsonl 每次互动后立即追加
 - 写完可验证文件行数确保写入成功
 
 ## 内容获取
