@@ -6,7 +6,7 @@
 
 - 读文件：`Read` 工具
 - 写文件：`Write` 工具（追加 transcript.jsonl 时：先 Read → 末尾 append 一行 JSON → Write 回去）
-- transcript.jsonl 每行一条 JSON：`{"time":"ISO","node":"id","type":"qa|feynman|quiz|reteach|session",...}`
+- transcript.jsonl 每行一条 JSON，`time` 用当前精确时间（ISO 8601 到秒，如 `2026-06-05T14:30:05`）
 - 抓网页：`WebFetch`
 - 搜索补充：`WebSearch`
 
@@ -53,7 +53,7 @@
 | "知识图谱"/`!graph` | ASCII 树 + 提示可用 Excalidraw |
 | "跳过"/`!skip` | 跳过当前费曼或测验 |
 | "进度"/`!status` | 显示摘要 |
-| "换个老师"/`!teacher xxx` | 切换老师，记录到 teacher_history |
+| "换个老师"/`!teacher xxx` | 切换老师，teacher_history 追加 `{"teacher":"xxx","from":"2026-06-05T14:30:05","to":null}`，旧老师 to 填当前时间 |
 | "复习"/`!review` | 触发间隔复习 |
 | "问个问题"/`!ask xxx` | 回答，不扰教学节奏 |
 | "结束"/`!done` | 保存进度 |

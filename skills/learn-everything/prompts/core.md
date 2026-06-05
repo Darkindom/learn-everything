@@ -56,11 +56,11 @@
 
 | 互动类型 | 格式 | 存到 |
 |---------|------|-------|
-| 回答学生提问 | `{"time":"...","type":"qa","q":"...","a":"..."}` | transcript.jsonl |
-| 费曼检查完成 | `{"time":"...","type":"feynman","question":"...","answer":"...","judgment":"..."}` | transcript.jsonl |
-| 测验批改 | `{"time":"...","type":"quiz","question":"...","answer":"...","correct":true/false}` | transcript.jsonl |
-| 重讲 | `{"time":"...","type":"reteach","angle":"...","reason":"..."}` | transcript.jsonl |
-| Session 开始/切换 | `{"time":"...","type":"session","teacher":"...","action":"start/switch"}` | transcript.jsonl |
+| 回答学生提问 | `{"time":"2026-06-05T14:30:05","type":"qa","q":"...","a":"..."}` | transcript.jsonl |
+| 费曼检查完成 | `{"time":"2026-06-05T14:30:05","type":"feynman","question":"...","answer":"...","judgment":"..."}` | transcript.jsonl |
+| 测验批改 | `{"time":"2026-06-05T14:30:05","type":"quiz","question":"...","answer":"...","correct":true/false}` | transcript.jsonl |
+| 重讲 | `{"time":"2026-06-05T14:30:05","type":"reteach","angle":"...","reason":"..."}` | transcript.jsonl |
+| Session 开始/切换 | `{"time":"2026-06-05T14:30:05","type":"session","teacher":"...","action":"start/switch"}` | transcript.jsonl |
 
 追加方式：先 `Read` transcript.jsonl，在末尾 append 一行 JSON，再 `Write` 回去。
 
