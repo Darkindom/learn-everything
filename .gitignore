@@ -1,2 +1,4 @@
 config.json
 .claude/
+.learning/*
+!.learning/.gitkeep
