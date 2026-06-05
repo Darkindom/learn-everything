@@ -18,7 +18,8 @@
 {主题名}/
 ├── progress.md          ← frontmatter JSON（状态、图谱、评分）
 ├── notes.md             ← 自动总结 + 手动笔记
-├── transcript.jsonl        ← 互动记录（实时追加）
+├── transcript.jsonl     ← 互动记录（实时追加）
+├── 00-课程概述.md        ← 课程全景：学什么、知识图谱、预估范围
 ├── 01-{标题}.md         ← 第 1 节课教材
 ├── 02-{标题}.md         ← 第 2 节课教材
 └── ...
@@ -30,7 +31,7 @@
 1. 问：学什么？（链接/路径/文本/名词都行）
 2. 展示老师选项，让用户选
 3. 分析内容，推荐图谱策略，让用户确认
-4. 创建目录 + progress.md/notes.md/transcript.jsonl + 预建空课程文件
+4. 创建目录 + progress.md/notes.md/transcript.jsonl + `00-课程概述.md`（写课程全景） + 预建空课程文件 `01-{标题}.md` …
 
 ### 已有主题
 1. 读 progress.md，展示进度 + 上次在哪
