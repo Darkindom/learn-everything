@@ -66,33 +66,36 @@ AI: （分析内容，拆成 7 节课）
 
 ## 怎么用
 
-### Claude Code
-
-软链接到全局技能目录：
+### 一键安装（Claude Code）
 
 ```bash
-ln -s $(pwd)/skills/learn-everything ~/.claude/skills/learn-everything
+bash install.sh
 ```
 
-然后：
+自动完成三件事：软链接技能 → 创建配置文件 → 注册写入强制 Hook。然后直接说"教我 React"就行。
 
-```
-/learn-everything
-```
+### 手动安装（Cursor / Codex）
 
-或者直接说"教我 React"、"帮我理解这篇论文"。
-
-### Cursor
-
-复制 `adapters/cursor.md` 的内容到 `.cursorrules` 或 Custom Instructions。
-
-### Codex
-
-复制 `adapters/codex.md` 的内容到 Session Instructions。
+- **Cursor**：复制 `adapters/cursor.md` 的内容到 `.cursorrules` 或 Custom Instructions
+- **Codex**：复制 `adapters/codex.md` 的内容到 Session Instructions
 
 ### 配置
 
-首次使用时 AI 会问"进度文件存哪"，或者手动改 `config.json`。
+学习进度文件默认存 `.learning/`。在 `config.json` 中修改 `learning_dir`。
+
+### Hook 强制落盘（Claude Code 专属）
+
+安装时自动注册 `UserPromptSubmit` Hook。每次上课（`phase=learning`），模型收到你的消息前都会看到这张强制提醒表：
+
+| 你做了什么 | 必须立即 Write |
+|-----------|-----------|
+| 和学生互动 | transcript.jsonl |
+| 回答了 !ask | transcript.jsonl + 判断是否记 note |
+| 费曼 / 测验 | transcript.jsonl |
+| 测验答错 | notes.md（错题集） |
+| 一节结束 | notes.md 总结 + 问下一课 |
+
+只在学习会话中生效，其他对话零开销。
 
 ---
 
