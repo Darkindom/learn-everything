@@ -40,7 +40,7 @@
 - 全部写完 → phase = ready
 
 ### ready
-展示 00-概述核心内容 → 问"开始第一课吗？" → 确认 → phase = learning
+展示 00-概述核心内容 → 问"开始第一课吗？" → 确认 → phase = learning → **Bash: touch /tmp/learn-everything-{主题名}**
 
 ### learning
 上课循环。每个节点：
@@ -72,5 +72,5 @@
 | "换个老师"/`!teacher xxx` | 切换老师 |
 | "复习"/`!review` | 触发间隔复习 |
 | "问个问题"/`!ask xxx` | 回答，不扰教学节奏 |
-| "结束"/`!done` | 保存进度，phase 保持 learning |
+| "结束"/`!done` | 保存进度 → **Bash: rm /tmp/learn-everything-{主题名}** → phase 保持 learning |
 | "换目录"/`!dir xxx` | 更新 config.json |

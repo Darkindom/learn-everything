@@ -27,7 +27,7 @@ onboarding → preparing → ready → learning → done
 | onboarding | 分析内容、出知识图谱（标题+概要）、用户确认、选老师 |
 | preparing | 一次性写全部教材：00-概述.md + 01..N 课程文件 |
 | ready | 展示概述，等用户说"开始" |
-| learning | 上课循环：读教材→讲→自评⏸→费曼⏸→测验⏸→存档→问下节⏸ |
+| learning | 进入时 `touch /tmp/learn-everything-{主题}`。上课循环。`!done` 时删标记文件 |
 | done | 全完成 |
 
 ## 文件结构
