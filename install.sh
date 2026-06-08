@@ -49,8 +49,9 @@ us = hooks.setdefault("UserPromptSubmit", [])
 
 # 检查是否已存在
 already = any(
-    h.get("command", "").endswith("check-transcript.sh")
-    for h in us
+    h2.get("command", "").endswith("check-transcript.sh")
+    for entry in us
+    for h2 in entry.get("hooks", [])
 )
 
 if already:
@@ -59,7 +60,12 @@ if already:
 
 us.append({
     "matcher": "",
-    "command": f"bash {hook_script}"
+    "hooks": [
+        {
+            "type": "command",
+            "command": f"bash {hook_script}"
+        }
+    ]
 })
 
 with open(settings_path, "w") as f:
