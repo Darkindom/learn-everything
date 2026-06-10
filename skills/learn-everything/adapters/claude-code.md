@@ -49,6 +49,17 @@
 3. 存档（transcript 实时写，notes 节后总结，有更好类比写回教材）
 4. **必须问**"继续下一课？" ⏸
 
+**存档执行清单（每节课评分后逐条执行）：**
+- [ ] transcript.jsonl：Read → 末尾追加测验结果 → Write
+- [ ] notes.md：Read → 末尾追加 3-5 条总结 → Write
+- [ ] 如有答错题：notes.md 追加错题记录
+- [ ] progress.md：更新节点 status + score
+
+**!ask 回答后判断清单：**
+- 我的回答是否含：新概念 / 概念对比 / 教材外细节 / 选型建议 / 最佳实践？
+- 任一为是 → Read notes.md → 追加知识点 → Write
+- 不确定 → 偏保守，写了再说
+
 ### done
 全部 completed，展示总结。
 
@@ -71,6 +82,6 @@
 | "进度"/`!status` | 显示 phase + 当前节点 + 完成率 |
 | "换个老师"/`!teacher xxx` | 切换老师 |
 | "复习"/`!review` | 触发间隔复习 |
-| "问个问题"/`!ask xxx` | 回答，不扰教学节奏 |
+| "问个问题"/`!ask xxx` | 回答 → 判断是否含新知识 → 是则立即追加 notes.md |
 | "结束"/`!done` | 保存进度 → **Bash: rm /tmp/learn-everything-{主题名}** → phase 保持 learning |
 | "换目录"/`!dir xxx` | 更新 config.json |
